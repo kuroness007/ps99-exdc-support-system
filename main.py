@@ -28,11 +28,9 @@ async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
-    await message.channel.send(message.content)
+    await message.channel.send(message.content + "が送られてきました")
 
-    if((message.content).startswith("exdc ") | \
-       (message.content).startswith("EXDC ") | \
-       (message.content).startswith("デイケア　")):
+    if((message.content).startswith("exdc ") | (message.content).startswith("EXDC ") | (message.content).startswith("デイケア　")):
         #a = ps99calc.func(message.content)
         a ="にゃ"
         await message.channel.send(a)
