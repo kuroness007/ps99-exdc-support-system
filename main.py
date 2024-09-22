@@ -1,6 +1,6 @@
 import discord
 import os
-#import keep_alive
+import bot.keep_alive
 
 client = discord.Client(intents=discord.Intents.default())
 
@@ -15,5 +15,5 @@ async def on_message(message):
 
 TOKEN = os.getenv("DISCORD_TOKEN")
 # Web サーバの立ち上げ
-#keep_alive()
+keep_alive()
 client.run(TOKEN)
