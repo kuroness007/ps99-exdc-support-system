@@ -29,7 +29,7 @@ async def on_message(message):
     if message.author.bot:
         return
 
-    if("@everyone" in message.content)
+    if("@everyone" in message.content):
         emoji ="👍"
         await message.add_reaction(emoji)
 
