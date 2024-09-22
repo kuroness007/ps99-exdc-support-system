@@ -1,6 +1,6 @@
 import discord
 import os
-import bot.keep_alive
+from keep_alive import keep_alive
 
 client = discord.Client(intents=discord.Intents.default())
 
