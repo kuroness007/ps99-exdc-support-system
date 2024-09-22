@@ -2,7 +2,7 @@
 import discord
 # 環境変数を読み込むのに必要なライブラリ
 import os
-#import requests
+import requests
 
 # 各モジュールのインポート
 from keep_alive import keep_alive
@@ -28,10 +28,6 @@ async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
-
-    if("@everyone" in message.content):
-        emoji ="👍"
-        await message.add_reaction(emoji)
 
     if((message.content).startswith("exdc ") | \
        (message.content).startswith("EXDC ") | \
