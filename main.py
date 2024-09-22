@@ -2,7 +2,7 @@
 import discord
 # 環境変数を読み込むのに必要なライブラリ
 import os
-import requests
+#import requests
 
 # 各モジュールのインポート
 from keep_alive import keep_alive
