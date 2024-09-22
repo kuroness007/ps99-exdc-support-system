@@ -33,8 +33,8 @@ async def on_message(message):
         emoji ="👍"
         await message.add_reaction(emoji)
 
-    if((message.content).startswith("exdc ") | /
-       (message.content).startswith("EXDC ") | /
+    if((message.content).startswith("exdc ") | \
+       (message.content).startswith("EXDC ") | \
        (message.content).startswith("デイケア　")):
         #a = ps99calc.func(message.content)
         a ="にゃ"
