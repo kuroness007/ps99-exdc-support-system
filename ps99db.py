@@ -48,7 +48,7 @@ def search(name):
   elif(name == "lunar moth") | (name == "ルナモス") | (name == "蛾"):return "lunar-moth"
   elif(name == "pterodactyl") | (name == "プテロダクティル") | (name == "プテラ"):return "pterodactyl"
   elif(name == "crocodile") | (name == "クロコダイル") | (name == "ワニ"):return "crocodile"
-  elif(name == "bee") | (name == "ハチ"): return "bee"
+  elif(name == "bee") | (name == "ビー") | (name == "ハチ"): return "bee"
   elif(name == "ghost") | (name == "ゴースト") | (name == "幽霊"):return "ghost"
   elif(name == "dino dog") | (name == "ディノドッグ") | (name == "恐竜犬"):return "dino-dog"
   #elif(name == ""):return ""
