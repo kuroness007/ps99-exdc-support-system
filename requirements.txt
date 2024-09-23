@@ -1,6 +1,6 @@
 discord.py==2.1.1
 Flask==2.2.3
 Werkzeug==2.3.8
-urllib3==1.26.13 
+urllib==1.26.13 
 requests==2.25.1
 BeautifulSoup4==4.9.3

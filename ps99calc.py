@@ -1,6 +1,6 @@
 # ライブラリの読み込み
 from bs4 import BeautifulSoup
-import urllib3.request
+import urllib.request
 import ps99db
 # 未対応　ランキング　レベルごと 日にちごと
 
