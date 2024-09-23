@@ -74,8 +74,7 @@ def read(huge_name):
 def calc(rank, type, rap, level):
   con_rap = convert_to_number(rap) # 38m
   daycare_diamond = round(calc_diamond(rank,type,level),4) # 1m
-  if(con_rap==0):return "ラップが不正"
-  if(daycare_diamond==0):return "ダイヤモンドが0です"
+  if(con_rap==0 | daycare_diamond==0):return "0","NAN"
   per = con_rap / daycare_diamond
   return str(daycare_diamond/1000000)+"M", str(round(per, 2))
 
