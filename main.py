@@ -7,7 +7,7 @@ import requests
 
 # 各モジュールのインポート
 from keep_alive import keep_alive
-from import ps99calc
+from ps99calc import ps99calc
 
 # このBOTが使う権限をデフォルトで設定
 intents=discord.Intents.default()
