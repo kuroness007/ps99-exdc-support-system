@@ -3,4 +3,4 @@ Flask==2.2.3
 Werkzeug==2.3.8
 urllib3==1.26.13 
 requests==2.25.1
-BeautifulSoup==3.2.2
+BeautifulSoup4==4.9.3
