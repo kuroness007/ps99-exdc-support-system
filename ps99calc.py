@@ -88,7 +88,8 @@ def calc_diamond(rank, type, level):
 
   diamond = 0
   
-  if(  rank == "A"): diamond = 1000000
+  if(  rank == "S"): diamond = 1500000
+  elif(rank == "A"): diamond = 1000000
   elif(rank == "B"): diamond = 750000
   elif(rank == "C"): diamond = 625000
   elif(rank == "D"): diamond = 500000
@@ -109,8 +110,9 @@ def do_rank(exist):
   elif(exist > 10000):  return "D"
   elif(exist > 5000):   return "C"
   elif(exist > 1000):   return "B"
-  elif(exist > 0):      return "A"
-  else:                 return "S"
+  elif(exist > 500):    return "A"
+  elif(exist > 0):      return "S"
+  else:                 return "N"
   
 
 def convert_to_number(s):
