@@ -1,5 +1,8 @@
 import csv
+
+db_list = []
 def init_read():
+  global db_list
   with open('ps99db.csv') as f:
     reader = csv.reader(f, quoting=csv.QUOTE_NONNUMERIC)
     l_f = [row for row in reader]
@@ -8,175 +11,21 @@ def init_read():
   db_list = l_f
   return db_list
 
-def se(db):
-  global prefix
-  prefix = ""
-  for i in range(db):
-    if(name == "happy computer") | (name == "ハッピーコンピューター") | (name == "パピコ"):
-      return "happy-computer"
-
 def search(name):
   global prefix
+  global db_list
   prefix = ""
-  # ) | (name == "") | (name == "")
-  if(name == "happy computer") | (name == "ハッピーコンピューター") | (name == "パピコ"): return "happy-computer"
-  elif(name == "happy rock") | (name == "ハッピーロック") | (name == "パピロ"): return "happy-rock"
-  elif(name == "nuclear wild dog") | (name == "ニュークリアワイルドドッグ") | (name == "核犬"):return "nuclear-wild-dog"
-  elif(name == "shuriken corgi") | (name == "シュリケンコーギー") | (name == "手裏剣"):return "shuriken-corgi"
-  elif(name == "sorcerer bear") | (name == "ソーサラーベア") | (name == "魔法使い熊"):return "sorcerer-bear"
-  elif(name == "mechatronic robot") | (name == "メカニックロボット") | (name == "ロボ"):return "mechatronic-robot"
-  elif(name == "hell rock") | (name == "ヘルロック") | (name == "ヘルロ") | (name == "地獄岩"):return "hell-rock"
-  elif(name == "wizard westie") | (name == "ウィザードウェスティ") | (name == "魔法使い犬"):return "wizard-westie"
-  elif(name == "cyber agony") | (name == "サイバーアゴニー") | (name == "テックキーのおまけ"):return "cyber-agony"
-  elif(name == "abyssal jellyfish") | (name == "アビサルジェリーフィッシュ") | (name == "クラゲ") | (name == "くらげ"):return "abyssal-jellyfish"
-  elif(name == "kangaroo") | (name == "カンガルー") | (name == "おやこあい"):return "kangaroo"
-  elif(name == "elephant") | (name == "エレファント") | (name == "ゾウ") | (name == "ぞう") | (name == "象"):return "elephant"
-  elif(name == "bison") | (name == "バイソン") | (name == "前髪"): return "bison"
-  elif(name == "fluffy cat") | (name == "フラッフィーキャット") | (name == "ふわふわ猫"):return "fluffy-cat"
-  elif(name == "temporal owl") | (name == "テンポラルオウル") | (name == "時間フクロウ"):return "temporal-owl"
-  elif(name == "corrupt butterfly") | (name == "コラプトバタフライ") | (name == "黒蝶") | (name == "黒死蝶"):return "corrupt-butterfly"
-  elif(name == "prison cat") | (name == "プリズンキャット") | (name == "脱獄猫"):return "prison-cat"
-  elif(name == "cupcake") | (name == "カップケーキ") | (name == "ケーキ"):return "cupcake"
-  elif(name == "chef cat") | (name == "シェフキャット") | (name == "料理猫"):return "chef-cat"
-  elif(name == "giraffe") | (name == "キリン") | (name == "きりん") | (name == "樹木希林"):return "giraffe"
-  elif(name == "red panda") | (name == "レッドパンダ") | (name == "パンダ") | (name == "ぱんだ"):return "red-panda"
-  elif(name == "jolly penguin") | (name == "ジョリーペンギン") | (name == "冬ペンギン"):return "jolly-penguin"
-  elif(name == "holographic cat") | (name == "ホログラフィックキャット") | (name == "青猫"):return "holographic-cat"
-  elif(name == "zebra") | (name == "ゼブラ") | (name == "シマウマ") | (name == "しまうま"):return "zebra"
-  elif(name == "goblin") | (name == "ゴブリン"):return "goblin"
-  elif(name == "punksky") | (name == "パンクスキー") | (name == "パンクス"): return "punksky"
-  elif(name == "jolly narwhal") | (name == "ジョリーイッカク") | (name == "冬イッカク"):return "jolly-narwhal"
-  elif(name == "marshmallow agony") | (name == "マシュマロアゴニー"):return "marshmallow-agony"
-  elif(name == "easter dominus") | (name == "イースタードミナス") | (name == "ウサギドミナス"):return "easter-dominus"
-  elif(name == "robber pug") | (name == "ロバーパグ") | (name == "泥棒犬") | (name == "泥棒パグ"):return "robber-pug"
-  elif(name == "plague dragon") | (name == "プラグドラゴン") | (name == "ペストマスク"):return "plague-dragon"
-  elif(name == "pixel corgi") | (name == "ピクセルコーギー"):return "pixel-corgi"
-  elif(name == "fossil dragon") | (name == "フォッシルドラゴン") | (name == "化石ドラゴン"):return "fossil-dragon"
-  elif(name == "peacock") | (name == "ピーコック") | (name == "クジャク"):return "peacock"
-  elif(name == "rave jaguar") | (name == "レイブジャガー") | (name == "ジャガー"):return "rave-jaguar"
-  elif(name == "colorful slime") | (name == "カラフルスライム") | (name == "レインボースライム") | (name == "虹スライム") | (name == "スライム"):return "colorful-slime"
-  elif(name == "koi fish") | (name == "コイフィッシュ") | (name == "鯉") | (name == "錦鯉") | (name == "こんにちは") | (name == "こんにちは～！"):return "koi-fish"
-  elif(name == "shadow dominus") | (name == "シャドードミナス"): return "shadow-dominus"
-  elif(name == "knight beagle") | (name == "ナイトビーグル") | (name == "ビーグル"):return "knight-beagle"
-  elif(name == "pumpkin cat") | (name == "パンプキンキャット") | (name == "かぼちゃ猫"): return "pumpkin-cat"
-  elif(name == "enchanted deer") | (name == "エンチャントデール") | (name == "シカ") | (name == "しか"):return "enchanted-deer"
-  elif(name == "easter bunny") | (name == "イースターバニー") | (name == "ケニー"):return "easter-bunny"
-  elif(name == "festive cat") | (name == "フェスティバルキャット"):return "festive-cat"
-  elif(name == "lunar moth") | (name == "ルナモス") | (name == "蛾") | (name == "月光蛾") | (name == "ゲッコウガ") | (name == "ｹﾞｯｺｳｶﾞｧ･･･"):return "lunar-moth"
-  elif(name == "pterodactyl") | (name == "プテロダクティル") | (name == "プテラノドン") | (name == "プテラ"):return "pterodactyl"
-  elif(name == "crocodile") | (name == "クロコダイル") | (name == "わに") | (name == "ワニ"):return "crocodile"
-  elif(name == "bee") | (name == "ビー") | (name == "ハチ") | (name == "はち"): return "bee"
-  elif(name == "ghost") | (name == "ゴースト") | (name == "幽霊"):return "ghost"
-  elif(name == "dino dog") | (name == "ディノドッグ") | (name == "恐竜犬"):return "dino-dog"
-  elif(name == "squirrel") | (name == "スクワーレル") | (name == "リス") | (name == "りす"):return "squirrel"
-  elif(name == "hacked cat") | (name == "ハックキャット") | (name == "ハック猫"):return "hacked-cat"
-  elif(name == "error cat") | (name == "エラーキャット") | (name == "エラー猫"):return "error-cat"
-  elif(name == "mushroom raccoon") | (name == "マッシュルームラクーン") | (name == "キノコタヌキ") | (name == "しいたけ") | (name == "エリンギ") | (name == "まいたけ") | (name == "ぶなしめじ"):return "mushroom-raccoon"
-  elif(name == "poseidon corgi") | (name == "ポセイドンコーギー"):return "poseidon-corgi"
-  elif(name == "uv kitsune") | (name == "UVキツネ") | (name == "日焼け九尾"):return "uv-kitsune"
-  elif(name == "mrs claws") | (name == "ミセスクロース") | (name == "めがねこ"):return "mrs.-claws"
-  elif(name == "night terror cat") | (name == "ナイトテラーキャット"):return "night-terror-cat"
-  elif(name == "kitsune-fox") | (name == "kitsune") | (name == "キツネフォックス") | (name == "きつね") | (name == "九尾"):return "kitsune-fox"
-  elif(name == "evil imp") | (name == "エビルインプ"):return "evil-imp"
-  elif(name == "scary cat") | (name == "スケアリーキャット") | (name == "コウモリ猫") | (name == "こうもり猫") | (name == "ねこうもり"):return "scary-cat"
-  elif(name == "pixel cat") | (name == "ピクセルキャット") | (name == "ピクセル猫"):return "pixel-cat"
-  elif(name == "scary corgi") | (name == "スケアリーコーギー") | (name == "コウモリコーギー") | (name == "こうもりコーギー"):return "scary-corgi"
-  elif(name == "leprechaun cat") | (name == "レプラコーンキャット") | (name == "レプラコーン猫") | (name == "レプラコーン") | (name == "レプラ") | (name == "クロネス"):return "leprechaun-cat"
-  elif(name == "avenging griffin") | (name == "アヴェンジンググリフィン"):return "avenging-griffin"
-  elif(name == "helicopter cat") | (name == "ヘリコプターキャット") | (name == "ヘリ猫") | (name == "ヘリコプター"):return "helicopter-cat"
-  elif(name == "mermaid cat") | (name == "マーメイドキャット") | (name == "人魚猫"):return "mermaid-cat"
-  elif(name == "rich cat") | (name == "リッチキャット") | (name == "リッチ猫"):return "rich-cat"
-  elif(name == "crystal dog") | (name == "クリスタルドッグ"):return "crystal-dog"
-  elif(name == "party dragon") | (name == "パーティードラゴン"):return "party-dragon"
-  elif(name == "mosaic corgi") | (name == "モザイクコーギー"):return "mosaic-corgi"
-  elif(name == "bat") | (name == "バット") | (name == "コウモリ") | (name == "こうもり"):return "bat"
-  elif(name == "rave meebo in a spaceship") | (name == "レイブミーボ"):return "rave-meebo-in-a-spaceship"
-  elif(name == "evolved hell rock") | (name == "エヴォルドヘルロック") | (name == "進化ヘルロック") | (name == "進化地獄岩"):return "evolved-hell-rock"
-  elif(name == "hacker axolotl") | (name == "ハックアホロートル") | (name == "ハックウーパールーパー") | (name == "ハックウーパー"):return "hacker-axolotl"
-  elif(name == "propeller cat") | (name == "プロペラーキャット") | (name == "プロペラ猫"):return "propeller-cat"
-  elif(name == "pineapple cat") | (name == "パイナップルキャット") | (name == "パイナップル猫") | (name == "パイン猫"):return "pineapple-cat"
-  elif(name == "quantum-agony") | (name == "クァンタムアゴニー"):return "quantum-agony"
-  elif(name == "techno cat") | (name == "テクノキャット") | (name == "テクノ猫"):return "techno cat"
-  elif(name == "whale shark") | (name == "ホエールシャーク") | (name == "ホエール") | (name == "くじら") | (name == "クジラ"):return "whale-shark"
-  elif(name == "strawberry corgi") | (name == "ストロベリーコーギー") | (name == "イチゴコーギー"):return "strawberry-corgi"
-  elif(name == "divinus") | (name == "ディビヌス"):return "divinus"
-  elif(name == "pineapple monkey") | (name == "パイナップルモンキー") | (name == "パイナップルサル") | (name == "パインサル"):return "pineapple-monkey"
-  elif(name == "king cobra") | (name == "キングコブラ"):return "king-cobra"
-  elif(name == "cupid corgi") | (name == "キューピッドコーギー"):return "cupid-corgi"
-  elif(name == "chroma lucki") | (name == "クロマラッキー"):return "chroma-lucki"
-  elif(name == "fancy axolotl") | (name == "ファンシーアホロートル") | (name == "ファンシーウーパールーパー") | (name == "ファンシーウーパー"):return "fancy-axolotl"
-  elif(name == "rave butterfly") | (name == "レイブバタフライ") | (name == "紫蝶"):return "rave-butterfly"
-  elif(name == "dark lord") | (name == "ダークロード"):return "dark-lord"
-  elif(name == "uv cat") | (name == "UVキャット") | (name == "UV猫") | (name == "日焼け猫"):return "uv-cat"
-  elif(name == "vibrant toucan") | (name == "ビブラントトウカン") | (name == "オオハシ") | (name == "トウカン"):return "vibrant-toucan"
-  elif(name == "scarecrow cat") | (name == "スケアクローキャット") | (name == "かかし猫"):return "scarecrow cat"
-  elif(name == "skateboard bulldog") | (name == "スケートブルドッグ") | (name == "ブルドッグ") | (name == "ソース"):return "skateboard-bulldog"
-  elif(name == "empyrean agony") | (name == "エンペリアンアゴニー"):return "empyrean-agony"
-  elif(name == "storm dominus") | (name == "ストームドミナス"):return "storm-dominus"
-  elif(name == "sapphire phoenix") | (name == "サファイアフェニックス"):return "sapphire-phoenix"
-  elif(name == "mosaic lamb") | (name == "モザイクラム"):return "mosaic-lamb"
-  elif(name == "stealth-dragon") | (name == "ステルスドラゴン") | (name == "忍者ドラゴン"):return "stealth-dragon"
-  elif(name == "Egg Dino") | (name == "エッグディノ") | (name == "ヨッシー"):return "egg-dino"
-  elif(name == "mosaic griffin") | (name == "モザイクグリフィン"):return "mosaic-griffin"
-  elif(name == "doodle cat") | (name == "ドードルキャット") | (name == "落書き猫"):return "doodle-cat"
-  elif(name == "big maskot") | (name == "ビッグマスコット"):return "big-maskot"
-  elif(name == "rave troll") | (name == "レイブトロール") | (name == "トロル"):return "rave-troll"
-  elif(name == "dragon") | (name == "ドラゴン") | (name == "ドラ"):return "dragon"
-  elif(name == "404 demon") | (name == "404デーモン") | (name == "404"):return "404-demon"
-  elif(name == "Electric Penguin") | (name == "エレクトリックペンギン") | (name == "電気ペンギン"):return "electric-penguin"
-  elif(name == "mech dino") | (name == "メカディノ") | (name == "メカバンギラス"):return "mech-dino"
-  elif(name == "knife cat") | (name == "ナイフキャット") | (name == "ナイフ猫"):return "knife-cat"
-  elif(name == "cosmic axolotl") | (name == "コズミックアホロートル") | (name == ""):return "cosmic-axolotl"
-  elif(name == "unicorn dragon") | (name == "ユニコーンドラゴン"):return "unicorn-dragon"
-  elif(name == "nightfall wolf") | (name == "ナイトフォールウルフ"):return "nightfall-wolf"
-  elif(name == "dog") | (name == "ドッグ") | (name == "犬"):return "dog"
-  elif(name == "elf cat") | (name == "エルフキャット"):return "elf-cat"
-  elif(name == "orca") | (name == "オルカ") | (name == "シャチ"):return "orca"
-  elif(name == "elf dog") | (name == "エルフドッグ"):return "elf-dog"
-  elif(name == "willow wisp") | (name == "ウィローウィスプ"):return "willow-wisp"
-  elif(name == "skeleton") | (name == "スケルトン") | (name == "骨") | (name == "サンズ") | (name == "パピルス"):return "skeleton"
-  elif(name == "kawaii dragon") | (name == "カワイイドラゴン") | (name == "ゆい"):return "kawaii-dragon"
-  elif(name == "tech chest mimic") | (name == "テックチェストミミック"):return "tech-chest-mimic"
-  elif(name == "electric dino") | (name == "エレクトリックディノ") | (name == "電気恐竜"):return "electric-dino"
-  elif(name == "doodle fairy") | (name == "ドードルフェアリー") | (name == "落書き妖精"):return "doodle-fairy"
-  elif(name == "hologram shark") | (name == "ホログラムシャーク"):return "hologram-shark"
-  elif(name == "chroma phoenix") | (name == "クロマフェニックス") | (name == "白フェニックス"):return "chroma-phoenix"
-  elif(name == "hippomelon") | (name == "ヒッポメロン") | (name == "スイカ"):return "hippomelon"
-  elif(name == "warrior wolf") | (name == "ウォーリアウルフ"):return "warrior-wolf"
-  elif(name == "gecko") | (name == "ゲッコ") | (name == "ヤモリ"):return "gecko"
-  elif(name == "devil dominus") | (name == "デビルドミナス"):return "devil-dominus"
-  elif(name == "atomic forged shark") | (name == "アトミックフォージドシャーク"):return "atomic-forged-shark"
-  elif(name == "jester dog") | (name == "ジェスタードッグ") | (name == "ジョーカー"):return "jester-dog"
-  elif(name == "holiday pegasus") | (name == "ホリデーペガサス"):return "holiday-pegasus"
-  elif(name == "electric cat") | (name == "エレクトリックキャット") | (name == "エレクトリック猫"):return "electric-cat"
-  elif(name == "flex fluffy cat") | (name == "フレックスフラッフィーキャット") | (name == "マダム"):return "flex-fluffy-cat"
-  elif(name == "colorful wisp") | (name == "カラーウィスプ"):return "colorful-wisp"
-  elif(name == "elegant eagle") | (name == "エレガントイーグル"):return "elegant-eagle"
-  elif(name == "grinch cat") | (name == "グリンチキャット"):return "grinch-cat"
-  elif(name == "nightfall pegasus") | (name == "ナイトフォールペガサス"):return "nightfall-pegasus"
-  elif(name == "redstone cat") | (name == "レッドストーンキャット") | (name == "赤石猫"):return "redstone-cat"
-  elif(name == "neon cat") | (name == "ネオンキャット") | (name == "ネオン猫"):return "neon-cat"
-  elif(name == "balloon dragon") | (name == "バルーンドラゴン") | (name == "風船ドラゴン"):return "balloon-dragon"
-  elif(name == "floppa") | (name == "フロッパ") | (name == "カラカル"):return "floppa"
-  elif(name == "luxe peacock") | (name == "ラグジーピーコック") | (name == "ダイヤクジャク"):return "luxe-peacock"
-  elif(name == "black hole axolotl") | (name == "ブラックホールアホロートル") | (name == "ブラックホールウーパールーパー") | (name == "黒ウーパー"):return "black-hole-axolotl"
-  elif(name == "nightmare spirit") | (name == "ナイトメアスピリット"):return "nightmare-spirit"
-  elif(name == "inferno dominus") | (name == "インフェルノドミナス"):return "inferno-dominus"
-  elif(name == "mantis shrimp") | (name == "マンティスシュリンプ") | (name == "シャコ"):return "mantis-shrimp"
+  for i in range(db_list):
+    array = db[i] # [1.0, 2.0, 3.0, 4.0]
+    rtn_value = db[0]
+    for j in range(array.size()):
+    if(name == array[i]):
+      return rtn_value
+  return "NULL"
+  #elif(name == "purple-chroma-phoenix"):
+  #  set_prefix("P")
+  #  return "chroma-phoenix"
 
-
-
-
-  #elif(name == ""):return ""
-      
-  elif(name == "purple-chroma-phoenix"):
-    set_prefix("P")
-    return "chroma-phoenix"
-  elif(name == "purple-chroma-tiger"):
-    set_prefix("P")
-    return "chroma-tiger"
-  else:
-    return "NULL"
 
 # クロマデカペ対応
 def get_prefix():
