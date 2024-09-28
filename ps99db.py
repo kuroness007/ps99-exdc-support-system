@@ -1,3 +1,4 @@
+import csv
 def init_read():
   with open('ps99db.csv') as f:
     reader = csv.reader(f, quoting=csv.QUOTE_NONNUMERIC)
