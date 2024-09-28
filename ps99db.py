@@ -55,7 +55,6 @@ def search(name):
   elif(name == "easter bunny") | (name == "イースターバニー") | (name == "ケニー"):return "easter-bunny"
   elif(name == "festive cat") | (name == "フェスティバルキャット"):return "festive-cat"
   elif(name == "lunar moth") | (name == "ルナモス") | (name == "蛾") | (name == "月光蛾") | (name == "ゲッコウガ") | (name == "ｹﾞｯｺｳｶﾞｧ･･･"):return "lunar-moth"
-:return "lunar-moth"
   elif(name == "pterodactyl") | (name == "プテロダクティル") | (name == "プテラノドン") | (name == "プテラ"):return "pterodactyl"
   elif(name == "crocodile") | (name == "クロコダイル") | (name == "わに") | (name == "ワニ"):return "crocodile"
   elif(name == "bee") | (name == "ビー") | (name == "ハチ") | (name == "はち"): return "bee"
