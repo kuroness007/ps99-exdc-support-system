@@ -19,6 +19,8 @@ client = discord.Client(intents=intents)
 # トークンを環境変数から取得
 TOKEN = os.getenv("DISCORD_TOKEN")
 
+flag = false
+
 # 起動時に動作する処理
 @client.event
 async def on_ready():
@@ -27,6 +29,7 @@ async def on_ready():
 # メッセージ受信時に動作する処理
 @client.event
 async def on_message(message):
+    global flag
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
@@ -44,5 +47,3 @@ async def on_message(message):
 # Web サーバの立ち上げ
 keep_alive()
 client.run(TOKEN)
-
-flag = false
