@@ -19,7 +19,7 @@ def search(name):
     array = db_list[i]
     rtn_value = db_list[0]
     for j in range(len(array)):
-      if(name == array[i]):
+      if(name == array[j]):
         return rtn_value
   return "NULL"
   #elif(name == "purple-chroma-phoenix"):
