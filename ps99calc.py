@@ -27,8 +27,7 @@ def make_list(huge_name):
   srre = read(pre + "Shiny-Rainbow-"+huge_name)
 
   rank = do_rank(convert_to_number(nre[1]))
-　
-　print("ねこ"+gre[0])
+　print("neko"+gre[0])
   nper = calc(rank,"N",nre[0],"1")
   gper = calc(rank,"G",gre[0],"1")
   rper = calc(rank,"R",rre[0],"1")
@@ -78,7 +77,7 @@ def read(huge_name):
 def calc(rank, type, rap, level):
   con_rap = convert_to_number(rap) # 38m
   daycare_diamond = round(calc_diamond(rank,type,level),4) # 1m
-  print("だいや"+ str(daycare_diamond))
+  print("diamond"+ str(daycare_diamond))
   if((con_rap==0) | (daycare_diamond==0)):return "0M","0"
   per = con_rap / daycare_diamond
   return str(daycare_diamond/1000000)+"M", str(round(per, 2))
