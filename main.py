@@ -30,7 +30,8 @@ async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
-
+    if(flag == True):
+        await message.channel.send(ps99calc.ps99db.init_read())
     if("@everyone" in message.content):
         emoji ="👍"
         await message.add_reaction(emoji)
@@ -43,4 +44,5 @@ async def on_message(message):
 # Web サーバの立ち上げ
 keep_alive()
 client.run(TOKEN)
-ps99calc.ps99db.init_read()
+
+flag = false

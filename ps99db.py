@@ -4,8 +4,15 @@ def init_read():
     l_f = [row for row in reader]
 
   print(l_f)
-    
+  db_list = l_f
   return db_list
+
+def se(db):
+  global prefix
+  prefix = ""
+  for i in range(db):
+    if(name == "happy computer") | (name == "ハッピーコンピューター") | (name == "パピコ"):
+      return "happy-computer"
 
 def search(name):
   global prefix
