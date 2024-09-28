@@ -43,3 +43,4 @@ async def on_message(message):
 # Web サーバの立ち上げ
 keep_alive()
 client.run(TOKEN)
+ps99calc.ps99db.init_read()
