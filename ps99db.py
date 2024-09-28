@@ -16,8 +16,8 @@ def search(name):
   global db_list
   prefix = ""
   for i in range(len(db_list)):
-    array = db[i] # [1.0, 2.0, 3.0, 4.0]
-    rtn_value = db[0]
+    array = db_list[i]
+    rtn_value = db_list[0]
     for j in range(len(array)):
       if(name == array[i]):
         return rtn_value
