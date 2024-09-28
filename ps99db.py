@@ -19,8 +19,8 @@ def search(name):
     array = db[i] # [1.0, 2.0, 3.0, 4.0]
     rtn_value = db[0]
     for j in range(array.size()):
-    if(name == array[i]):
-      return rtn_value
+      if(name == array[i]):
+        return rtn_value
   return "NULL"
   #elif(name == "purple-chroma-phoenix"):
   #  set_prefix("P")
