@@ -140,7 +140,7 @@ def search(name):
   elif(name == "atomic forged shark") | (name == "アトミックフォージドシャーク"):return "atomic-forged-shark"
   elif(name == "jester dog") | (name == "ジェスタードッグ") | (name == "ジョーカー"):return "jester-dog"
   elif(name == "holiday pegasus") | (name == "ホリデーペガサス"):return "holiday-pegasus"
-  elif(name == "electric cat") | (name == エレクトリックキャット"") | (name == "エレクトリック猫"):return "electric-cat"
+  elif(name == "electric cat") | (name == "エレクトリックキャット") | (name == "エレクトリック猫"):return "electric-cat"
   elif(name == "flex fluffy cat") | (name == "フレックスフラッフィーキャット") | (name == "マダム"):return "flex-fluffy-cat"
   elif(name == "colorful wisp") | (name == "カラーウィスプ"):return "colorful-wisp"
   elif(name == "elegant eagle") | (name == "エレガントイーグル"):return "elegant-eagle"
