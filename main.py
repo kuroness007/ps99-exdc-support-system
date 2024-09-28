@@ -19,7 +19,7 @@ client = discord.Client(intents=intents)
 # トークンを環境変数から取得
 TOKEN = os.getenv("DISCORD_TOKEN")
 
-flag = false
+flag = 1
 
 # 起動時に動作する処理
 @client.event
@@ -33,7 +33,8 @@ async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
-    if(flag == True):
+    if(flag == 1):
+        flag = 0
         await message.channel.send(ps99calc.ps99db.init_read())
     if("@everyone" in message.content):
         emoji ="👍"
