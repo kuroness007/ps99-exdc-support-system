@@ -27,7 +27,6 @@ def make_list(huge_name):
   srre = read(pre + "Shiny-Rainbow-"+huge_name)
 
   rank = do_rank(convert_to_number(nre[1]))
-　print("neko"+gre[0])
   nper = calc(rank,"N",nre[0],"1")
   gper = calc(rank,"G",gre[0],"1")
   rper = calc(rank,"R",rre[0],"1")
@@ -71,6 +70,7 @@ def read(huge_name):
   name = soup.find("h2").get_text()
   exist = list[0].get_text()
   rap = list[1].get_text()
+  print(rap,exist)
   return rap,exist
 
 
