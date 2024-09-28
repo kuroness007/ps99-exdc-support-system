@@ -3,7 +3,7 @@ import csv
 db_list = []
 def init_read():
   global db_list
-  with open('ps99db.csv') as f:
+  with open('ps99db.csv', encoding="shift-jis") as f:
     reader = csv.reader(f, quoting=csv.QUOTE_NONNUMERIC)
     l_f = [row for row in reader]
 
