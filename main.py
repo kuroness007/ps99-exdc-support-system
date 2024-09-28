@@ -19,7 +19,7 @@ client = discord.Client(intents=intents)
 # トークンを環境変数から取得
 TOKEN = os.getenv("DISCORD_TOKEN")
 
-await message.channel.send(ps99calc.ps99db.init_read())
+ps99calc.ps99db.init_read()
 
 # 起動時に動作する処理
 @client.event
