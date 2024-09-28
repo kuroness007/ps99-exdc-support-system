@@ -3,8 +3,6 @@ from bs4 import BeautifulSoup
 import urllib.request
 import ps99db
 
-# リリース時に外す
-import main
 # 未対応　ランキング　レベルごと 日にちごと
 
 def func(msg):
