@@ -17,10 +17,10 @@ def search(name):
   prefix = ""
   for i in range(len(db_list)):
     array = db_list[i]
-    rtn_value = db_list[0]
+    rtn_value = array[0]
     for j in range(len(array)):
       if(name == array[j]):
-        return str(rtn_value)
+        return rtn_value
   return "NULL"
   #elif(name == "purple-chroma-phoenix"):
   #  set_prefix("P")
