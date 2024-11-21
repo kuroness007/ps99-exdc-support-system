@@ -55,7 +55,7 @@ def gen_2(per):
 
 def read(huge_name):
   # URL
-  url = "https://db.biggames.io/pet/v2/" + huge_name
+  url = "https://db.biggames.io/pet/v2/" + huge_name + "?game=ps99"
   # URLにアクセス 
   try:
     html = urllib.request.urlopen(url)
