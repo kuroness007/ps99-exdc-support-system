@@ -65,7 +65,10 @@ def read(huge_name):
   soup = BeautifulSoup(html, "html.parser")
   # 出力
   list = soup.find_all("span", class_="__className_6592b5")
-  name = soup.find("h2").get_text()
+  try:
+    name = soup.find("h2").get_text()
+  except:
+    return "0","0"
   exist = list[0].get_text()
   rap = list[1].get_text()
   print(rap,exist)
