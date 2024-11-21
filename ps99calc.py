@@ -64,7 +64,7 @@ def read(huge_name):
   # HTMLをBeautifulSoupで扱う
   soup = BeautifulSoup(html, "html.parser")
   # 出力
-  list = soup.find_all("span", class_="__className_12c8de")
+  list = soup.find_all("span", class_="__className_6592b5")
   name = soup.find("h2").get_text()
   exist = list[0].get_text()
   rap = list[1].get_text()
