@@ -119,7 +119,7 @@ def read(huge_name):
     html = urllib.request.urlopen(url)
   except:
     return "0","0"
-  time.sleep(0.01)
+  time.sleep(0.001)
   # HTMLをBeautifulSoupで扱う
   soup = BeautifulSoup(html, "html.parser")
   # 出力
@@ -136,9 +136,7 @@ def read(huge_name):
 
 def calc(rank, type, rap, level):
   con_rap = convert_to_number(rap) # 38m
-  time.sleep(0.002)
   daycare_diamond = round(calc_diamond(rank,type,level),4) # 1m
-  time.sleep(0.002)
   print("diamond"+ str(daycare_diamond))
   if((con_rap==0) | (daycare_diamond==0)):return "0M","0"
   per = con_rap / daycare_diamond
