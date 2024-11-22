@@ -23,6 +23,9 @@ def ranking():
     snre = read(pre + "Shiny-"+huge_name)
     sgre = read(pre + "Shiny-Golden-"+huge_name)
     srre = read(pre + "Shiny-Rainbow-"+huge_name)
+
+    return str(nre[0])+":"+str(nre[1])
+
     # Existを基にランクする
     rank = do_rank(convert_to_number(nre[1]))
     # ダイヤ量を計算
@@ -47,7 +50,6 @@ def ranking():
     if(srper[1] != "0.0"):
       list.append([srper[1],"Shiny-Rainbow-"+huge_name,srper[0]])
     list = sorted(list)
-    #バグラップ弾き
     
     #リスト追加
     if(len(list) > 10):
