@@ -42,7 +42,7 @@ def ranking():
     daycare_diamond = round(calc_diamond(rank,"N","99"),4) # 1m
     #per = con_rap / daycare_diamond
 
-    debug += str(con_rap)+str(daycare_diamond)+"\n"
+    debug += huge_name + str(con_rap)+ ":" +str(daycare_diamond)+"\n"
     # nper[0] = "200k" nper[1] = "33.3"
     # リストアップ
     if(nper[1] != "0"):
