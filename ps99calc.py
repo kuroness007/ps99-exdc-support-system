@@ -6,7 +6,49 @@ import ps99db
 # 未対応　ランキング　レベルごと 日にちごと
 
 def ranking():
-  return str(len(ps99db.db_list))+"このデカペをリストにする"
+  # len(ps99db.db_list)
+  list = []
+  for i in range(3):
+    name = str(i+1)
+    huge_name = ps99db.search(name)
+    if(huge_name == "NULL"):
+      return "致命的なエラー："+str(name)
+    # print(huge_name) # bison
+    pre = ps99db.get_prefix()
+    base_name = pre + huge_name
+    # ここで各金虹シャイニーのRAPとエキストを取得
+    nre  = read(pre + huge_name) # RAP EXISTS
+    gre  = read(pre + "Golden-"+huge_name)
+    rre  = read(pre + "Rainbow-"+huge_name)
+    snre = read(pre + "Shiny-"+huge_name)
+    sgre = read(pre + "Shiny-Golden-"+huge_name)
+    srre = read(pre + "Shiny-Rainbow-"+huge_name)
+    # Existを基にランクする
+    rank = do_rank(convert_to_number(nre[1]))
+    # ダイヤ量を計算
+    nper  = calc(rank,"N",nre[0],"99")
+    gper  = calc(rank,"G",gre[0],"99")
+    rper  = calc(rank,"R",rre[0],"99")
+    snper = calc(rank,"SN",snre[0],"99")
+    sgper = calc(rank,"SG",sgre[0],"99")
+    srper = calc(rank,"SR",srre[0],"99")
+    # nper[0] = "200k" nper[1] = "33.3"
+    # リストアップ
+    list.append(nper[1],huge_name,nper[0])
+    list.append(gper[1],"Golden-"+huge_name,gper[0])
+    list.append(rper[1],"Rainbow-"+huge_name,rper[0])
+    list.append(snper[1],"Shiny-"+huge_name,snper[0])
+    list.append(sgper[1],"Shiny-Golden-"+huge_name,sgper[0])
+    list.append(srper[1],"Shiny-Rainbow-"+huge_name,srper[0])
+    list = sorted(list)
+
+    if(len(list) > 10):
+      list = list[0:10]
+
+  text = ""
+  for i in range(len(list)):
+    text += "第" + str(i)+"位:"+list[i][2]+"もらえる"+list[i][1]+"の"+list[i][0]
+  return "このデカペをリストにする"
 
 def func(msg):
   print(msg) # exdc bison
