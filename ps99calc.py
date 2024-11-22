@@ -48,7 +48,7 @@ def ranking():
   text = ""
   for i in range(len(list)):
     text += "第" + str(i)+"位:"+list[i][2]+"もらえる"+list[i][1]+"の"+list[i][0]
-  return "このデカペをリストにする"
+  return text
 
 def func(msg):
   print(msg) # exdc bison
