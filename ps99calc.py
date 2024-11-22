@@ -5,6 +5,9 @@ import ps99db
 
 # 未対応　ランキング　レベルごと 日にちごと
 
+def ranking():
+  return str(len(ps99db.db_list))+"このデカペをリストにする"
+
 def func(msg):
   print(msg) # exdc bison
   name = msg[5:len(msg)] # bison

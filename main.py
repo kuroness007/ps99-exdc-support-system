@@ -41,6 +41,11 @@ async def on_message(message):
         output = ps99calc.func(message.content)
         await message.channel.send(output)
         return
+
+    if((message.content).startswith("ranking"):
+        output = ps99calc.ranking()
+        await message.channel.send(output)
+        return
     
 # Web サーバの立ち上げ
 keep_alive()
