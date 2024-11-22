@@ -12,7 +12,7 @@ def ranking():
   debug = ""
   for i in range(5):
     name = str(i+1)
-    huge_name = ps99db.search(name)
+    huge_name = ps99db.search("huge-"+name)
     if(huge_name == "NULL"):
       return "致命的なエラー："+str(name)
     # print(huge_name) # bison
@@ -44,7 +44,7 @@ def ranking():
     #happy-computer339:400000
     #happy-rock1800:400000
     #nuclear-wild-dog0:0
-    debug += huge_name + nre[0] +":" +nre[1] +":" + nper[0] +":" + nper[1] +":" + str(con_rap)+ ":" +str(daycare_diamond)+"\n"
+    debug += huge_name + nper[0] +":" + nper[1] +":" + str(con_rap)+ ":" +str(daycare_diamond)+"\n"
     # nper[0] = "200k" nper[1] = "33.3"
     # リストアップ
     if(nper[1] != "0"):
