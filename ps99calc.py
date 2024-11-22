@@ -10,7 +10,7 @@ def ranking():
   # len(ps99db.db_list)
   list = []
   text = str(len(ps99db.db_list))+"匹のノーマルデカペを見ました\n"
-  for i in range(len(ps99db.db_list)):
+  for i in range(30):
     name = str(i+1)
     ans = ps99db.search(name)
     if(ans == "NULL"):
