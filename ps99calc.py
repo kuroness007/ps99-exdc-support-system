@@ -34,17 +34,17 @@ def ranking():
     srper = calc(rank,"SR",srre[0],"99")
     # nper[0] = "200k" nper[1] = "33.3"
     # リストアップ
-    if([nper[1] != "0.0"):
+    if(nper[1] != "0.0"):
       list.append([nper[1],huge_name,nper[0]])
-    if([gper[1] != "0.0"):
+    if(gper[1] != "0.0"):
       list.append([gper[1],"Golden-"+huge_name,gper[0]])
-    if([rper[1] != "0.0"):
+    if(rper[1] != "0.0"):
       list.append([rper[1],"Rainbow-"+huge_name,rper[0]])
-    if([snper[1] != "0.0"):
+    if(snper[1] != "0.0"):
       list.append([snper[1],"Shiny-"+huge_name,snper[0]])
-    if([sgper[1] != "0.0"):
+    if(sgper[1] != "0.0"):
       list.append([sgper[1],"Shiny-Golden-"+huge_name,sgper[0]])
-    if([srper[1] != "0.0"):
+    if(srper[1] != "0.0"):
       list.append([srper[1],"Shiny-Rainbow-"+huge_name,srper[0]])
     list = sorted(list)
     #バグラップ弾き
