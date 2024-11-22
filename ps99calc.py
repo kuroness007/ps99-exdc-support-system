@@ -131,6 +131,7 @@ def read(huge_name):
 
 
 def calc(rank, type, rap, level):
+  time.sleep(0.01)
   con_rap = convert_to_number(rap) # 38m
   daycare_diamond = round(calc_diamond(rank,type,level),4) # 1m
   print("diamond"+ str(daycare_diamond))
