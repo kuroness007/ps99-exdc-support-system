@@ -56,8 +56,8 @@ def ranking():
       list.append([float(srper[1]),"Shiny-Rainbow-"+huge_name,srper[0]])
   list2 = sorted(list)
 
-  if(len(list2) > 100):
-    list = list2[0:100]
+  if(len(list2) > 30):
+    list = list2[0:30]
 
   for i in range(len(list)):
     text += "第" + str(i+1)+"位:"+list[i][2]+"もらえる"+list[i][1]+"の"+str(list[i][0])+"日\n"
