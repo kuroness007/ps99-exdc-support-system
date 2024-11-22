@@ -9,6 +9,7 @@ import time
 def ranking():
   # len(ps99db.db_list)
   list = []
+  debug = ""
   for i in range(3):
     name = str(i+1)
     huge_name = ps99db.search(name)
@@ -27,6 +28,8 @@ def ranking():
 
     # Existを基にランクする
     rank = do_rank(convert_to_number(nre[1]))
+
+
     # ダイヤ量を計算
     nper  = calc(rank,"N",nre[0],"99")
     gper  = calc(rank,"G",gre[0],"99")
@@ -34,6 +37,12 @@ def ranking():
     snper = calc(rank,"SN",snre[0],"99")
     sgper = calc(rank,"SG",sgre[0],"99")
     srper = calc(rank,"SR",srre[0],"99")
+
+    con_rap = convert_to_number(nre[0]) # 38m
+    daycare_diamond = round(calc_diamond(rank,"N","99"),4) # 1m
+    per = con_rap / daycare_diamond
+
+    debug += str(con_rap)+str(daycare_diamond)+str(per)+"\n"
     # nper[0] = "200k" nper[1] = "33.3"
     # リストアップ
     if(nper[1] != "0"):
@@ -57,7 +66,7 @@ def ranking():
   text = str(len(ps99db.db_list))+"匹のノーマルデカペを見ました\n"
   for i in range(len(list)):
     text += "第" + str(i+1)+"位:"+list[i][2]+"もらえる"+list[i][1]+"の"+list[i][0]+"日\n"
-  return text
+  return text +"\n"+debug
 
 def func(msg):
   print(msg) # exdc bison
@@ -131,7 +140,6 @@ def read(huge_name):
 
 
 def calc(rank, type, rap, level):
-  time.sleep(0.01)
   con_rap = convert_to_number(rap) # 38m
   daycare_diamond = round(calc_diamond(rank,type,level),4) # 1m
   print("diamond"+ str(daycare_diamond))
