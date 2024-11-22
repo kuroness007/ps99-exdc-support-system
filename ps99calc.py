@@ -2,6 +2,7 @@
 from bs4 import BeautifulSoup
 import urllib.request
 import ps99db
+import time
 
 # 未対応　ランキング　レベルごと 日にちごと
 
@@ -24,8 +25,6 @@ def ranking():
     sgre = read(pre + "Shiny-Golden-"+huge_name)
     srre = read(pre + "Shiny-Rainbow-"+huge_name)
 
-    return str(nre[0])+":"+str(nre[1])
-
     # Existを基にランクする
     rank = do_rank(convert_to_number(nre[1]))
     # ダイヤ量を計算
@@ -37,17 +36,17 @@ def ranking():
     srper = calc(rank,"SR",srre[0],"99")
     # nper[0] = "200k" nper[1] = "33.3"
     # リストアップ
-    if(nper[1] != "0.0"):
+    if(nper[1] != "0"):
       list.append([nper[1],huge_name,nper[0]])
-    if(gper[1] != "0.0"):
+    if(gper[1] != "0"):
       list.append([gper[1],"Golden-"+huge_name,gper[0]])
-    if(rper[1] != "0.0"):
+    if(rper[1] != "0"):
       list.append([rper[1],"Rainbow-"+huge_name,rper[0]])
-    if(snper[1] != "0.0"):
+    if(snper[1] != "0"):
       list.append([snper[1],"Shiny-"+huge_name,snper[0]])
-    if(sgper[1] != "0.0"):
+    if(sgper[1] != "0"):
       list.append([sgper[1],"Shiny-Golden-"+huge_name,sgper[0]])
-    if(srper[1] != "0.0"):
+    if(srper[1] != "0"):
       list.append([srper[1],"Shiny-Rainbow-"+huge_name,srper[0]])
     list = sorted(list)
     
@@ -116,6 +115,7 @@ def read(huge_name):
     html = urllib.request.urlopen(url)
   except:
     return "0","0"
+  time.sleep(0.01)
   # HTMLをBeautifulSoupで扱う
   soup = BeautifulSoup(html, "html.parser")
   # 出力
