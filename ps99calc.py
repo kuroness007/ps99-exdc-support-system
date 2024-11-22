@@ -12,9 +12,12 @@ def ranking():
   debug = ""
   for i in range(5):
     name = str(i+1)
-    huge_name = ps99db.search("huge-"+name)
-    if(huge_name == "NULL"):
+    ans = ps99db.search(name)
+    if(ans == "NULL"):
       return "致命的なエラー："+str(name)
+    print(ans) # bison
+    huge_name = "huge-"+ans
+
     # print(huge_name) # bison
     pre = ps99db.get_prefix()
     base_name = pre + huge_name
