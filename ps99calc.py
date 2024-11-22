@@ -43,24 +43,24 @@ def ranking():
     # nper[0] = "200k" nper[1] = "33.3"
     # リストアップ
     if(nper[1] != "0"):
-      list.append([nper[1],huge_name,nper[0]])
+      list.append([float(nper[1]),huge_name,nper[0]])
     if(gper[1] != "0"):
-      list.append([gper[1],"Golden-"+huge_name,gper[0]])
+      list.append([float(gper[1]),"Golden-"+huge_name,gper[0]])
     if(rper[1] != "0"):
-      list.append([rper[1],"Rainbow-"+huge_name,rper[0]])
+      list.append([float(rper[1]),"Rainbow-"+huge_name,rper[0]])
     if(snper[1] != "0"):
-      list.append([snper[1],"Shiny-"+huge_name,snper[0]])
+      list.append([float(snper[1]),"Shiny-"+huge_name,snper[0]])
     if(sgper[1] != "0"):
-      list.append([sgper[1],"Shiny-Golden-"+huge_name,sgper[0]])
+      list.append([float(sgper[1]),"Shiny-Golden-"+huge_name,sgper[0]])
     if(srper[1] != "0"):
-      list.append([srper[1],"Shiny-Rainbow-"+huge_name,srper[0]])
+      list.append([float(srper[1]),"Shiny-Rainbow-"+huge_name,srper[0]])
   list2 = sorted(list)
 
   if(len(list2) > 25):
     list = list2[0:25]
 
   for i in range(len(list)):
-    text += "第" + str(i+1)+"位:"+list[i][2]+"もらえる"+list[i][1]+"の"+list[i][0]+"日\n"
+    text += "第" + str(i+1)+"位:"+list[i][2]+"もらえる"+list[i][1]+"の"+str(list[i][0])+"日\n"
   return text
 
 def func(msg):
