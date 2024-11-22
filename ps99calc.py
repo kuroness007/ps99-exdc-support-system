@@ -38,11 +38,11 @@ def ranking():
     sgper = calc(rank,"SG",sgre[0],"99")
     srper = calc(rank,"SR",srre[0],"99")
 
-    con_rap = convert_to_number(nre[0]) # 38m
-    daycare_diamond = round(calc_diamond(rank,"N","99"),4) # 1m
-    per = con_rap / daycare_diamond
+    #con_rap = convert_to_number(nre[0]) # 38m
+    #daycare_diamond = round(calc_diamond(rank,"N","99"),4) # 1m
+    #per = con_rap / daycare_diamond
 
-    debug += str(con_rap)+str(daycare_diamond)+str(per)+"\n"
+    #debug += str(con_rap)+str(daycare_diamond)+str(per)+"\n"
     # nper[0] = "200k" nper[1] = "33.3"
     # リストアップ
     if(nper[1] != "0"):
@@ -141,9 +141,16 @@ def read(huge_name):
 
 def calc(rank, type, rap, level):
   con_rap = convert_to_number(rap) # 38m
+  time.sleep(0.002)
   daycare_diamond = round(calc_diamond(rank,type,level),4) # 1m
+  time.sleep(0.002)
   print("diamond"+ str(daycare_diamond))
-  if((con_rap==0) | (daycare_diamond==0)):return "0M","0"
+  if((con_rap==0) & (daycare_diamond==0)):
+    return "0M","0"
+  if((con_rap==0)):
+    return "AM","0"
+  if((daycare_diamond==0)):
+    return "PM","0"
   per = con_rap / daycare_diamond
   return str(daycare_diamond/1000000)+"M", str(round(per, 2))
 
