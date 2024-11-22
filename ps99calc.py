@@ -10,7 +10,7 @@ def ranking():
   # len(ps99db.db_list)
   list = []
   text = str(len(ps99db.db_list))+"匹のノーマルデカペを見ました\n"
-  for i in range(5):
+  for i in range(len(ps99db.db_list)):
     name = str(i+1)
     ans = ps99db.search(name)
     if(ans == "NULL"):
@@ -56,8 +56,8 @@ def ranking():
       list.append([float(srper[1]),"Shiny-Rainbow-"+huge_name,srper[0]])
   list2 = sorted(list)
 
-  if(len(list2) > 25):
-    list = list2[0:25]
+  if(len(list2) > 100):
+    list = list2[0:100]
 
   for i in range(len(list)):
     text += "第" + str(i+1)+"位:"+list[i][2]+"もらえる"+list[i][1]+"の"+str(list[i][0])+"日\n"
