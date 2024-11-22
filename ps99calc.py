@@ -34,18 +34,18 @@ def ranking():
     srper = calc(rank,"SR",srre[0],"99")
     # nper[0] = "200k" nper[1] = "33.3"
     # リストアップ
-    list.append(nper[1],huge_name,nper[0])
-    list.append(gper[1],"Golden-"+huge_name,gper[0])
-    list.append(rper[1],"Rainbow-"+huge_name,rper[0])
-    list.append(snper[1],"Shiny-"+huge_name,snper[0])
-    list.append(sgper[1],"Shiny-Golden-"+huge_name,sgper[0])
-    list.append(srper[1],"Shiny-Rainbow-"+huge_name,srper[0])
+    list.append([nper[1],huge_name,nper[0]])
+    list.append([gper[1],"Golden-"+huge_name,gper[0]])
+    list.append([rper[1],"Rainbow-"+huge_name,rper[0]])
+    list.append([snper[1],"Shiny-"+huge_name,snper[0]])
+    list.append([sgper[1],"Shiny-Golden-"+huge_name,sgper[0]])
+    list.append([srper[1],"Shiny-Rainbow-"+huge_name,srper[0]])
     list = sorted(list)
 
     if(len(list) > 10):
       list = list[0:10]
 
-  text = ""
+  text = str(len(ps99db.db_list))+"匹のノーマルデカペを見ました\n"
   for i in range(len(list)):
     text += "第" + str(i)+"位:"+list[i][2]+"もらえる"+list[i][1]+"の"+list[i][0]
   return text
