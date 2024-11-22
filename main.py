@@ -42,8 +42,8 @@ async def on_message(message):
         await message.channel.send(output)
         return
 
-    if((message.content).startswith("ranking")):
-        output = ps99calc.ranking()
+    if((message.content).startswith("ranking ")):
+        output = ps99calc.ranking(message.content)
         await message.channel.send(output)
         return
     
