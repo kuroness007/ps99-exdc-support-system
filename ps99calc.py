@@ -118,14 +118,11 @@ def read(huge_name):
   # URLにアクセス 
   try:
     html = urllib.request.urlopen(url)
-  except:
-    return "0","0"
-  time.sleep(0.001)
-  # HTMLをBeautifulSoupで扱う
-  soup = BeautifulSoup(html, "html.parser")
-  # 出力
-  list = soup.find_all("span", class_="__className_6592b5")
-  try:
+    time.sleep(0.001)
+    # HTMLをBeautifulSoupで扱う
+    soup = BeautifulSoup(html, "html.parser")
+    # 出力
+    list = soup.find_all("span", class_="__className_6592b5")
     name = soup.find("h2").get_text()
   except:
     return "0","0"
