@@ -10,8 +10,8 @@ def ranking(msg):
   value = msg[8:len(msg)] # 50
   # len(ps99db.db_list)
   list = []
-  text = str(len(ps99db.db_list))+"匹の中から"+str(1+int(value))+"～"+str(51+int(value))+"のノーマルデカペを見ました\n"
-  for i in range(50):
+  text = str(len(ps99db.db_list))+"匹の中から"+str(1+int(value))+"～"+str(30+int(value))+"のノーマルデカペを見ました\n"
+  for i in range(30):
     name = str(i+1+int(value))
     ans = ps99db.search(name)
     if(ans == "NULL"):
