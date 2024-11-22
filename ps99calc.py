@@ -10,7 +10,7 @@ def ranking():
   # len(ps99db.db_list)
   list = []
   debug = ""
-  for i in range(3):
+  for i in range(5):
     name = str(i+1)
     huge_name = ps99db.search(name)
     if(huge_name == "NULL"):
@@ -41,8 +41,10 @@ def ranking():
     con_rap = convert_to_number(nre[0]) # 38m
     daycare_diamond = round(calc_diamond(rank,"N","99"),4) # 1m
     #per = con_rap / daycare_diamond
-
-    debug += huge_name + str(con_rap)+ ":" +str(daycare_diamond)+"\n"
+    #happy-computer339:400000
+    #happy-rock1800:400000
+    #nuclear-wild-dog0:0
+    debug += huge_name + nre[0] +":" +nre[1] +":" + nper[0] +":" + nper[1] +":" + str(con_rap)+ ":" +str(daycare_diamond)+"\n"
     # nper[0] = "200k" nper[1] = "33.3"
     # リストアップ
     if(nper[1] != "0"):
@@ -60,8 +62,8 @@ def ranking():
     list = sorted(list)
     
     #リスト追加
-    if(len(list) > 10):
-      list = list[0:10]
+    if(len(list) > 25):
+      list = list[0:25]
 
   text = str(len(ps99db.db_list))+"匹のノーマルデカペを見ました\n"
   for i in range(len(list)):
