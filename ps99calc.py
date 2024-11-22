@@ -32,7 +32,6 @@ def ranking():
     # Existを基にランクする
     rank = do_rank(convert_to_number(nre[1]))
 
-
     # ダイヤ量を計算
     nper  = calc(rank,"N",nre[0],"99")
     gper  = calc(rank,"G",gre[0],"99")
@@ -41,29 +40,23 @@ def ranking():
     sgper = calc(rank,"SG",sgre[0],"99")
     srper = calc(rank,"SR",srre[0],"99")
 
-    con_rap = convert_to_number(nre[0]) # 38m
-    daycare_diamond = round(calc_diamond(rank,"N","99"),4) # 1m
-    #per = con_rap / daycare_diamond
-    #happy-computer339:400000
-    #happy-rock1800:400000
-    #nuclear-wild-dog0:0
-    debug += huge_name + nper[0] +":" + nper[1] +":" + str(con_rap)+ ":" +str(daycare_diamond)+"\n"
     # nper[0] = "200k" nper[1] = "33.3"
     # リストアップ
-    if(nper[1] != "0"):
+    if(nper[1] != "0.0"):
       list.append([nper[1],huge_name,nper[0]])
-    if(gper[1] != "0"):
+    if(gper[1] != "0.0"):
       list.append([gper[1],"Golden-"+huge_name,gper[0]])
-    if(rper[1] != "0"):
+    if(rper[1] != "0.0"):
       list.append([rper[1],"Rainbow-"+huge_name,rper[0]])
-    if(snper[1] != "0"):
+    if(snper[1] != "0.0"):
       list.append([snper[1],"Shiny-"+huge_name,snper[0]])
-    if(sgper[1] != "0"):
+    if(sgper[1] != "0.0"):
       list.append([sgper[1],"Shiny-Golden-"+huge_name,sgper[0]])
-    if(srper[1] != "0"):
+    if(srper[1] != "0.0"):
       list.append([srper[1],"Shiny-Rainbow-"+huge_name,srper[0]])
+    time.sleep(0.002)
     list = sorted(list)
-    
+    time.sleep(0.002)
     #リスト追加
     if(len(list) > 25):
       list = list[0:25]
